@@ -37,7 +37,12 @@ go run examples/custom_example.go
 go run examples/simple_loop.go
 ```
 
+<<<<<<< HEAD
 ## Language Syntax
+=======
+
+## Example code
+>>>>>>> dd4db189fdc416b5b6e833405e2a33c74362e805
 
 ### Variable Assignment
 ```french
