@@ -120,9 +120,8 @@ func (p *Parser) ParseProgram() *ast.Program {
 	program.Statements = []ast.Statement{}
 
 	for p.curToken.Type != token.EOF {
-		if stmt := p.parseStatement(); stmt != nil {
-			program.Statements = append(program.Statements, stmt)
-		}
+		stmt := p.parseStatement()
+		program.Statements = append(program.Statements, stmt)
 		p.nextToken()
 	}
 
@@ -135,7 +134,7 @@ func (p *Parser) parseStatement() ast.Statement {
 		if p.peekTokenIs(token.ASSIGN) {
 			return p.parseAssignmentStatement()
 		}
-		fallthrough
+		return p.parseExpressionStatement()
 	case token.BOUCLE:
 		// Handle BOUCLE directly as a statement
 		return &ast.ExpressionStatement{
@@ -182,41 +181,6 @@ func (p *Parser) parseExpressionStatement() *ast.ExpressionStatement {
 }
 
 // Handle parsing block statements
-func (p *Parser) parseBlockStatement() *ast.BlockStatement {
-	block := &ast.BlockStatement{Token: p.curToken}
-	block.Statements = []ast.Statement{}
-
-	p.nextToken()
-
-	for !p.curTokenIs(token.FIN) && !p.curTokenIs(token.EOF) {
-		stmt := p.parseStatement()
-		if stmt != nil {
-			block.Statements = append(block.Statements, stmt)
-		}
-		p.nextToken()
-	}
-
-	return block
-}
-
-// Add parsing for while loops
-func (p *Parser) parseWhileLoop() *ast.WhileLoop {
-	loop := &ast.WhileLoop{Token: p.curToken}
-
-	p.nextToken()
-	loop.Condition = p.parseExpression(LOWEST)
-
-	// Skip to the body
-	p.nextToken()
-	loop.Body = p.parseBlockStatement()
-
-	if !p.expectPeek(token.FIN) {
-		return nil
-	}
-
-	return loop
-}
-
 func (p *Parser) parseExpression(precedence int) ast.Expression {
 	prefix := p.prefixParseFns[p.curToken.Type]
 	if prefix == nil {
@@ -268,7 +232,13 @@ func (p *Parser) expectPeek(t interface{}) bool {
 			return true
 		}
 	case string:
-		if p.peekToken.Literal == t {
+		// Check if this string is actually a token type or a literal
+		if string(p.peekToken.Type) == t {
+			// It's a token type comparison
+			p.nextToken()
+			return true
+		} else if p.peekToken.Literal == t {
+			// It's a token literal comparison
 			p.nextToken()
 			return true
 		}
@@ -363,9 +333,7 @@ func (p *Parser) parseSimpleLoop() ast.Expression {
 	// Parse statements until FIN
 	for !p.curTokenIs(token.FIN) && !p.curTokenIs(token.EOF) {
 		stmt := p.parseStatement()
-		if stmt != nil {
-			blockStmt.Statements = append(blockStmt.Statements, stmt)
-		}
+		blockStmt.Statements = append(blockStmt.Statements, stmt)
 		p.nextToken()
 	}
 

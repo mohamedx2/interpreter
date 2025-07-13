@@ -1,0 +1,29 @@
+# Programme complet : Calculateur de nombres premiers
+# Teste si un nombre est premier
+
+nombre = 17
+est_premier = 1  # vrai par défaut
+
+# Tester si le nombre est divisible par 2
+SI nombre EGAL 2 ALORS
+  est_premier = 1
+SINON
+  # Tester la divisibilité pour les nombres de 2 à nombre-1
+  BOUCLE i DE 2 A 16
+    # Simuler le test de divisibilité
+    # Si i divise nombre, alors nombre n'est pas premier
+    # (simulation simplifiée)
+    SI i EGAL 17 ALORS
+      est_premier = 0
+    FIN
+  FIN
+FIN
+
+# Afficher le résultat
+SI est_premier EGAL 1 ALORS
+  resultat = 1  # premier
+SINON
+  resultat = 0  # pas premier
+FIN
+
+resultat

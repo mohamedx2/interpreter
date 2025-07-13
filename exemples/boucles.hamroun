@@ -1,0 +1,18 @@
+# Calcul de la factorielle de 5 avec une boucle
+nombre = 5
+factorielle = 1
+
+BOUCLE i DE 1 A nombre
+  factorielle = factorielle * i
+FIN
+
+# Calcul de la somme des nombres de 1 à 10
+somme = 0
+
+BOUCLE j DE 1 A 10
+  somme = somme + j
+FIN
+
+# Afficher les résultats
+factorielle
+somme

@@ -1,0 +1,3 @@
+nombre = 7
+SI nombre PLUS_GRAND 5 ALORS grand = 1 SINON grand = 0 FIN
+grand

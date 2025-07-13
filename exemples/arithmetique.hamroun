@@ -1,0 +1,15 @@
+# Exemple simple d'arithmétique
+x = 10
+y = 5
+
+# Calculs de base
+somme = x + y
+difference = x - y
+produit = x * y
+quotient = x / y
+
+# Affichage des résultats
+somme
+difference
+produit
+quotient

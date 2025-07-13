@@ -1,0 +1,4 @@
+# Test simple
+age = 18
+test = age PLUS_GRAND 17
+test

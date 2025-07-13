@@ -250,20 +250,14 @@ func evalSimpleLoop(loop *ast.SimpleLoop, env *Environment) Object {
 	// Create result variable
 	var result Object = &Null{}
 
-	fmt.Printf("DEBUG: Executing loop from %d to %d\n", start, end)
-	fmt.Printf("DEBUG: Counter variable: %s\n", loop.Counter.Value)
-
 	// Execute loop for each value in range
 	for i := start; i <= end; i++ {
 		// Set counter variable
 		env.Set(loop.Counter.Value, &Integer{Value: i})
 
-		fmt.Printf("DEBUG: Iteration %d, counter = %d\n", i-start+1, i)
-
 		// If body is a block, execute each statement
 		if blockStmt, ok := loop.Body.(*ast.BlockStatement); ok {
 			for _, stmt := range blockStmt.Statements {
-				fmt.Printf("DEBUG: Executing statement: %s\n", stmt.String())
 				result = Evaluate(stmt, env)
 				if isError(result) {
 					return result
