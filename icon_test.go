@@ -14,12 +14,12 @@ var (
 
 func checkIcon(filename string) {
 	fmt.Printf("🔍 Vérification de l'icône pour: %s\n", filename)
-	
+
 	// Convert filename to UTF-16
 	filenamePtr, _ := syscall.UTF16PtrFromString(filename)
-	
+
 	var largeIcon, smallIcon uintptr
-	
+
 	// Try to extract icon
 	ret, _, _ := procExtractIconEx.Call(
 		uintptr(unsafe.Pointer(filenamePtr)),
@@ -28,7 +28,7 @@ func checkIcon(filename string) {
 		uintptr(unsafe.Pointer(&smallIcon)),
 		1, // number of icons
 	)
-	
+
 	if ret > 0 {
 		fmt.Printf("✅ Icône détectée! Large: %v, Small: %v\n", largeIcon, smallIcon)
 	} else {
@@ -41,6 +41,6 @@ func main() {
 		fmt.Println("Usage: icon_test.exe fichier.exe")
 		return
 	}
-	
+
 	checkIcon(os.Args[1])
 }
