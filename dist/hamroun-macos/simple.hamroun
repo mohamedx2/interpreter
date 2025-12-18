@@ -1,0 +1,20 @@
+# 🎯 Programme simple - Premier test
+# Votre premier programme en français!
+
+# Variables
+mon_age = 25
+annee_naissance = 2000
+
+# Calculs
+age_dans_10_ans = mon_age + 10
+age_difference = mon_age - 18
+
+# Test simple
+SI mon_age EGAL 25 ALORS
+  statut = 1  # Adulte
+SINON
+  statut = 0  # Autre
+FIN
+
+# Affichage du résultat
+statut

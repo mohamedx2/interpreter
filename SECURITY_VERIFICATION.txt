@@ -1,0 +1,32 @@
+﻿ HAMROUN SECURITY VERIFICATION
+
+ File: hamroun-clean.exe
+ SHA256: 6660F18310E9282FDBB7A1ACC2CA49FFF014B587BAE5854584D31D615B106CC7
+ Build Date: 2025-08-19 19:35:15
+ Developer: Mohamed Ali Hamroun (@mohamedx2)
+
+ VERIFICATION SOURCES:
+- GitHub: https://github.com/mohamedx2
+- Website: https://mohamedalihamroun.me
+- LinkedIn: https://linkedin.com/in/mohamedalihamroun
+
+ WHY ANTIVIRUS MAY FLAG THIS FILE:
+1. New executable (no digital signature)
+2. Go language binary patterns
+3. False positive from heuristic scanning
+4. Unknown developer to antivirus database
+
+ THIS FILE IS SAFE BECAUSE:
+- Open source project
+- No network connections without user consent
+- No system modifications
+- Pure interpreter functionality
+- Verifiable source code
+
+ IF YOUR ANTIVIRUS BLOCKS THIS:
+1. Add exception for this file
+2. Check SHA256 hash matches above
+3. Download from official source only
+4. Contact developer if suspicious
+
+Last updated: 2025-08-19 19:35:15
