@@ -1,0 +1,25 @@
+{
+  "name": "interpreter",
+  "displayName": "Hamroun Workspace",
+  "description": "Hamroun French Programming Language Development Workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "pwsh -File build-professional.ps1",
+    "build:cross": "pwsh -File build-professional.ps1 -CrossPlatform",
+    "build:extension": "pwsh -File build-extension.ps1",
+    "test": "go test ./...",
+    "test:verbose": "go test -v ./...",
+    "test:cover": "go test -cover ./...",
+    "clean": "pwsh -Command 'Remove-Item -Recurse -Force bin, dist -ErrorAction SilentlyContinue'",
+    "format": "gofmt -w .",
+    "lint": "golint ./..."
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohamedx2/interpreter.git"
+  },
+  "author": "Mohamed Ali Hamroun",
+  "license": "MIT"
+}

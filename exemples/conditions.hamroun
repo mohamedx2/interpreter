@@ -3,9 +3,9 @@ age = 18
 
 # Test de majorité (1 = majeur, 0 = mineur)
 SI age PLUS_GRAND 17 ALORS statut = 1 SINON statut = 0 FIN
-
 # Test d'égalité (1 = exactement 18, 0 = pas 18)
 SI age EGAL 18 ALORS message = 1 SINON message = 0 FIN
 
 # Retourner le message final
 message
+#now they works !!!

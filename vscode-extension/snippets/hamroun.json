@@ -1,0 +1,137 @@
+{
+  "Condition SI-ALORS-SINON": {
+    "prefix": "si",
+    "body": [
+      "SI ${1:condition} ALORS",
+      "\t${2:# code si vrai}",
+      "SINON",
+      "\t${3:# code si faux}",
+      "FIN"
+    ],
+    "description": "Structure conditionnelle SI-ALORS-SINON"
+  },
+  "Condition SI-ALORS": {
+    "prefix": "sia",
+    "body": [
+      "SI ${1:condition} ALORS",
+      "\t${2:# code}",
+      "FIN"
+    ],
+    "description": "Structure conditionnelle SI-ALORS simple"
+  },
+  "Boucle DE-A": {
+    "prefix": "boucle",
+    "body": [
+      "BOUCLE ${1:i} DE ${2:1} A ${3:10}",
+      "\t${4:# code}",
+      "FIN"
+    ],
+    "description": "Boucle avec compteur DE-A"
+  },
+  "Boucle TANT_QUE": {
+    "prefix": "tant",
+    "body": [
+      "TANT_QUE ${1:condition} FAIRE",
+      "\t${2:# code}",
+      "FIN"
+    ],
+    "description": "Boucle TANT_QUE"
+  },
+  "Variable": {
+    "prefix": "var",
+    "body": [
+      "${1:nom} = ${2:valeur}"
+    ],
+    "description": "Déclaration de variable"
+  },
+  "Afficher": {
+    "prefix": "aff",
+    "body": [
+      "AFFICHER ${1:expression}"
+    ],
+    "description": "Afficher une valeur"
+  },
+  "Fonction": {
+    "prefix": "fonction",
+    "body": [
+      "FONCTION ${1:nom}(${2:parametres})",
+      "\t${3:# code}",
+      "\tRETOURNER ${4:resultat}",
+      "FIN"
+    ],
+    "description": "Déclaration de fonction"
+  },
+  "Procédure": {
+    "prefix": "procedure",
+    "body": [
+      "PROCEDURE ${1:nom}(${2:parametres})",
+      "\t${3:# code}",
+      "FIN"
+    ],
+    "description": "Déclaration de procédure"
+  },
+  "Comparaison EGAL": {
+    "prefix": "egal",
+    "body": [
+      "${1:variable} EGAL ${2:valeur}"
+    ],
+    "description": "Comparaison d'égalité"
+  },
+  "Comparaison DIFFERENT": {
+    "prefix": "diff",
+    "body": [
+      "${1:variable} DIFFERENT ${2:valeur}"
+    ],
+    "description": "Comparaison de différence"
+  },
+  "Comparaison PLUS_GRAND": {
+    "prefix": "pg",
+    "body": [
+      "${1:variable} PLUS_GRAND ${2:valeur}"
+    ],
+    "description": "Comparaison supérieur"
+  },
+  "Comparaison PLUS_PETIT": {
+    "prefix": "pp",
+    "body": [
+      "${1:variable} PLUS_PETIT ${2:valeur}"
+    ],
+    "description": "Comparaison inférieur"
+  },
+  "Programme de base": {
+    "prefix": "prog",
+    "body": [
+      "# Programme Hamroun",
+      "# Auteur: ${1:nom}",
+      "# Date: ${2:date}",
+      "",
+      "${3:# code principal}",
+      ""
+    ],
+    "description": "Template de programme Hamroun"
+  },
+  "Commentaire bloc": {
+    "prefix": "comm",
+    "body": [
+      "# ========================================",
+      "# ${1:Description}",
+      "# ========================================",
+      "${2}"
+    ],
+    "description": "Bloc de commentaire"
+  },
+  "Tableau": {
+    "prefix": "tableau",
+    "body": [
+      "${1:nom} = TABLEAU[${2:taille}]"
+    ],
+    "description": "Déclaration de tableau"
+  },
+  "Liste": {
+    "prefix": "liste",
+    "body": [
+      "${1:nom} = LISTE[${2:elements}]"
+    ],
+    "description": "Déclaration de liste"
+  }
+}

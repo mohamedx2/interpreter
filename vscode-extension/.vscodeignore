@@ -1,0 +1,7 @@
+*.vsix
+node_modules
+.vscode-test/
+out/
+.vscode
+*.log
+.DS_Store

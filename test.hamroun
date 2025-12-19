@@ -1,0 +1,17 @@
+# Mon premier programme avec l'extension
+x = 10
+y = 20
+
+SI x PLUS_PETIT y ALORS
+    AFFICHER "x est plus petit que y"
+SINON
+    AFFICHER "x est plus grand ou égal à y"
+FIN
+
+# Boucle
+somme = 0
+BOUCLE i DE 1 A 10
+    somme = somme + i
+FIN
+
+AFFICHER somme

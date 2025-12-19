@@ -1,0 +1,62 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+hamroun
+hamroun-*
+
+# Test binaries
+*.test
+
+# Output directories
+bin/
+dist/
+out/
+
+# Go workspace file
+go.work
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VS Code Extension
+*.vsix
+vscode-extension/out/
+vscode-extension/node_modules/
+
+# Build artifacts
+*.syso
+*.zip
+*.tar.gz
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+
+# Resource files (generated)
+resource.syso
+rsrc.syso
+
+# Windows resource files
+*.res
+
+# Debug files
+debug
+debug.exe

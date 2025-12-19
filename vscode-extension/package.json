@@ -1,0 +1,93 @@
+{
+  "name": "hamroun-language",
+  "displayName": "Hamroun Language Support",
+  "description": "Syntax highlighting, snippets, and IntelliSense for Hamroun French programming language",
+  "version": "1.0.0",
+  "publisher": "mohamedalihamroun",
+  "author": {
+    "name": "Mohamed Ali Hamroun",
+    "email": "contact@mohamedalihamroun.me"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohamedx2/interpreter"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Language Packs"
+  ],
+  "keywords": [
+    "hamroun",
+    "french",
+    "français",
+    "programming language",
+    "interpreter",
+    "french programming"
+  ],
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#0055A4",
+    "theme": "dark"
+  },
+  "activationEvents": [
+    "onLanguage:hamroun"
+  ],
+  "main": "./extension/out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "hamroun",
+        "aliases": [
+          "Hamroun",
+          "hamroun"
+        ],
+        "extensions": [
+          ".hamroun"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./images/icon.png",
+          "dark": "./images/icon.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "hamroun",
+        "scopeName": "source.hamroun",
+        "path": "./syntaxes/hamroun.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "hamroun",
+        "path": "./snippets/hamroun.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Hamroun French Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/hamroun-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0",
+    "@vscode/vsce": "^2.19.0"
+  }
+}
